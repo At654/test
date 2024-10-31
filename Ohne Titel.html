@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitaler Tresor</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input { padding: 10px; font-size: 16px; }
+        button { padding: 10px 20px; font-size: 16px; }
+        #message { margin-top: 20px; font-size: 18px; }
+    </style>
+</head>
+<body>
+    <h1>Digitaler Tresor</h1>
+    <p>Gib den Code ein, um den Tresor zu öffnen:</p>
+    <input type="text" id="codeInput" placeholder="Code eingeben">
+    <button onclick="checkCode()">Öffnen</button>
+    <div id="message"></div>
+
+    <script>
+        function checkCode() {
+            const correctCode = "1234"; // Setze hier deinen Code
+            const userCode = document.getElementById('codeInput').value;
+            const message = document.getElementById('message');
+
+            if (userCode === correctCode) {
+                message.textContent = "Tresor geöffnet! Herzlichen Glückwunsch!";
+                message.style.color = "green";
+                window.open("https://tools.fobizz.com/website/pages/adb7e4a3-9e71-4408-affd-3720f541112b", "_blank");
+            } else {
+                message.textContent = "Falscher Code. Versuche es erneut.";
+                message.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
